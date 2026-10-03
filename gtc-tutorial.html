@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTC Tutorial, Bechimari | Classes 1 to 12</title>
+<meta name="description" content="GTC Tutorial in Bechimari, Bongaigaon, Assam. Tuition for Classes 1 to 12 in Maths, Science, English and Chemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#B3162A;
+    --red-dark:#8A0F1F;
+    --ink:#1B2740;
+    --paper:#FFFFFF;
+    --chalk:#F3F5F8;
+    --tea:#2F6B4F;
+    --pencil:#F2B632;
+    --line:#D9DEE7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hind Siliguri",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    font-size:18px;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","Hind Siliguri",sans-serif;line-height:1.08;letter-spacing:-0.02em}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--pencil);outline-offset:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+  /* Woven gamosa border: the one memorable element */
+  .weave{
+    height:34px;
+    background:
+      linear-gradient(90deg,transparent 0 50%,rgba(255,255,255,.0) 50%),
+      repeating-linear-gradient(90deg,var(--red) 0 14px,#fff 14px 18px,var(--red) 18px 32px,var(--pencil) 32px 36px,var(--red) 36px 50px,#fff 50px 54px);
+    position:relative;
+  }
+  .weave::before,.weave::after{
+    content:"";position:absolute;left:0;right:0;height:5px;background:var(--red-dark);
+  }
+  .weave::before{top:0}
+  .weave::after{bottom:0}
+  .weave.thin{height:18px}
+
+  header.top{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:16px 0;
+  }
+  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-0.01em}
+  .brand span{color:var(--red)}
+  nav a{margin-left:20px;text-decoration:none;font-weight:500;font-size:.98rem}
+  nav a:hover{color:var(--red)}
+  @media (max-width:560px){nav a:not(.btn-nav){display:none}}
+
+  /* Hero */
+  .hero{padding:56px 0 64px}
+  .hero .hi{color:var(--tea);font-weight:600;margin-bottom:14px}
+  .hero h1{
+    font-size:clamp(2.4rem,7.5vw,4.9rem);
+    font-weight:800;
+    max-width:12ch;
+  }
+  .hero p.lead{margin-top:22px;max-width:46ch;font-size:1.15rem}
+  .subjects{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;list-style:none}
+  .subjects li{
+    border:2px solid var(--ink);
+    padding:6px 16px;
+    font-weight:600;
+    border-radius:999px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;
+    padding:13px 24px;border-radius:6px;border:2px solid var(--red);
+    background:var(--red);color:#fff;cursor:pointer;font:inherit;font-weight:600;
+  }
+  .btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
+  .btn.ghost{background:transparent;color:var(--red)}
+  .btn.ghost:hover{background:var(--red);color:#fff}
+  .btn-nav{padding:8px 16px;margin-left:20px;color:#fff}
+
+  /* Classes */
+  section{padding:68px 0}
+  section h2{font-size:clamp(1.8rem,4.5vw,2.7rem);font-weight:700;margin-bottom:12px}
+  .sub{max-width:52ch;color:#3C4A66;margin-bottom:34px}
+  .ladder{list-style:none;border-top:2px solid var(--ink)}
+  .ladder li{
+    display:grid;grid-template-columns:150px 1fr;gap:8px 28px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+  }
+  .ladder h3{font-size:1.5rem;font-weight:700;color:var(--red)}
+  .ladder p{max-width:56ch}
+  @media (max-width:600px){.ladder li{grid-template-columns:1fr}}
+
+  /* Why */
+  .chalk{background:var(--chalk)}
+  .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px 40px;margin-top:10px}
+  .points h3{font-size:1.2rem;font-weight:700;margin-bottom:6px;padding-left:14px;border-left:5px solid var(--pencil)}
+  .points p{padding-left:19px}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media (max-width:760px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+  dl.info dt{font-weight:600;color:var(--tea);margin-top:16px}
+  dl.info dt:first-child{margin-top:0}
+  dl.info dd{font-size:1.08rem}
+  form{display:grid;gap:16px}
+  label{font-weight:600;display:block;margin-bottom:4px}
+  input,select,textarea{
+    width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
+  textarea{min-height:92px;resize:vertical}
+  .note{font-size:.92rem;color:#51607E}
+
+  footer{background:var(--ink);color:#fff;padding:34px 0 40px}
+  footer p{opacity:.85}
+</style>
+</head>
+<body>
+
+<div class="weave" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">GTC <span>Tutorial</span></a>
+    <nav aria-label="Main">
+      <a href="#classes">Classes</a>
+      <a href="#why">Why GTC</a>
+      <a class="btn btn-nav" href="#contact">Enquire</a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="hi">স্বাগতম &middot; Bechimari, Bongaigaon, Assam</p>
+    <h1>Every class from 1 to 12, taught clearly.</h1>
+    <p class="lead">GTC Tutorial helps students understand their lessons, not just memorise them. Small steps, patient teaching, and regular practice.</p>
+    <ul class="subjects" aria-label="Subjects taught">
+      <li>Maths</li>
+      <li>Science</li>
+      <li>English</li>
+      <li>Chemistry</li>
+    </ul>
+    <div class="cta-row">
+      <a class="btn" href="#contact">Ask about admission</a>
+      <a class="btn ghost" href="#classes">See classes</a>
+    </div>
+  </div>
+
+  <div class="weave thin" aria-hidden="true"></div>
+
+  <section id="classes">
+    <div class="wrap">
+      <h2>Classes we teach</h2>
+      <p class="sub">One centre for the whole school journey, from the first classes to Class 12.</p>
+      <ul class="ladder">
+        <li>
+          <h3>Class 1 to 5</h3>
+          <p>A strong start. Reading, writing, numbers and simple science, with lots of practice and encouragement.</p>
+        </li>
+        <li>
+          <h3>Class 6 to 8</h3>
+          <p>Building understanding in Maths, Science and English so that harder topics feel familiar later.</p>
+        </li>
+        <li>
+          <h3>Class 9 and 10</h3>
+          <p>Focused preparation for board exams, with chapter-wise revision and doubt solving.</p>
+        </li>
+        <li>
+          <h3>Class 11 and 12</h3>
+          <p>Concept-first teaching for senior secondary subjects, including Chemistry, Maths and English.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="why" class="chalk">
+    <div class="wrap">
+      <h2>How we teach</h2>
+      <div class="points">
+        <div>
+          <h3>Concepts before answers</h3>
+          <p>Students learn why a method works, so they can solve questions they have not seen before.</p>
+        </div>
+        <div>
+          <h3>Doubts are welcome</h3>
+          <p>Ask as many times as needed. No question is too small to explain again.</p>
+        </div>
+        <div>
+          <h3>Regular practice</h3>
+          <p>Homework and revision keep each lesson fresh, so exams feel familiar.</p>
+        </div>
+        <div>
+          <h3>Close to home</h3>
+          <p>Located in Bechimari, so students do not have to travel far for good tuition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Visit or message us</h2>
+        <p class="sub">Tell us your class and subjects. We will reply with batch timings and fees.</p>
+        <dl class="info">
+          <dt>Address</dt>
+          <dd>GTC Tutorial, Bechimari, Bongaigaon, Assam</dd>
+          <dt>Phone / WhatsApp</dt>
+          <dd id="phoneText"><a href="tel:+919864937678">+91 98649 37678</a></dd>
+          <dt>Batch timings</dt>
+          <dd>Add your timings here</dd>
+        </dl>
+      </div>
+
+      <form id="enquiry">
+        <div>
+          <label for="name">Student's name</label>
+          <input id="name" name="name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="cls">Class</label>
+          <select id="cls" name="cls" required>
+            <option value="">Choose a class</option>
+            <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+            <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+            <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+            <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+          </select>
+        </div>
+        <div>
+          <label for="msg">Subjects or questions</label>
+          <textarea id="msg" name="msg" placeholder="For example: Maths and Science"></textarea>
+        </div>
+        <button class="btn" type="submit">Send on WhatsApp</button>
+        <p class="note">This opens WhatsApp with your message ready to send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div class="weave thin" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <p><strong>GTC Tutorial</strong>, Bechimari, Bongaigaon, Assam</p>
+    <p>Classes 1 to 12 &middot; Maths, Science, English, Chemistry</p>
+  </div>
+</footer>
+
+<script>
+  // EDIT THIS: your WhatsApp number with country code, digits only (example: 919XXXXXXXXX)
+  const WHATSAPP_NUMBER = "919864937678";
+
+  document.getElementById("enquiry").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const f = e.target;
+    const text = "Hello GTC Tutorial, I would like to enquire about admission.\n" +
+      "Student: " + f.name.value + "\n" +
+      "Class: " + f.cls.value + "\n" +
+      (f.msg.value ? "Details: " + f.msg.value : "");
+    const base = WHATSAPP_NUMBER ? "https://wa.me/" + WHATSAPP_NUMBER : "https://wa.me/";
+    window.open(base + "?text=" + encodeURIComponent(text), "_blank");
+  });
+</script>
+</body>
+</html>
